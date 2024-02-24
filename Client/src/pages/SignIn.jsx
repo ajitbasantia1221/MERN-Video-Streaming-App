@@ -1,6 +1,5 @@
-import React from "react";
 import styled from "styled-components";
-import { useState } from "react";
+import React,{ useState } from "react";
 import axios from "axios";
 import { loginFailure, loginStart, loginSuccess } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
@@ -72,7 +71,7 @@ const Link = styled.span`
 
 const SignIn = () => {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -118,21 +117,21 @@ const SignIn = () => {
         <Title>Sign in</Title>
         <SubTitle>continue to PlayTube</SubTitle>
         <Input placeholder="username"
-          onChange={e => setName(e.target.value)} />
+          onChange={(e) => setName(e.target.value)} />
         <Input type="password"
           placeholder="password"
-          onChange={e => setPassword(e.target.value)} />
+          onChange={(e) => setPassword(e.target.value)} />
         <Button Sign in onClick={handleLogin}>Sign in</Button>
         <Title>or</Title>
         <Button onClick={signInWithGoogle}>Signin with Google</Button>
         <Title>or</Title>
         <Input placeholder="username"
-          onChange={e => setName(e.target.value)} />
+          onChange={(e) => setName(e.target.value)} />
         <Input placeholder="email"
-          onChange={e => setEmail(e.target.value)} />
+          onChange={(e) => setEmail(e.target.value)} />
         <Input type="password"
           placeholder="password"
-          onChange={e => setPassword(e.target.value)} />
+          onChange={(e) => setPassword(e.target.value)} />
         <Button>Sign up</Button>
       </Wrapper>
       <More>

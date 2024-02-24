@@ -1,11 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-//import {format} from "timeago.js"
 import TimeAgo from 'react-timeago'
-import { useState ,useEffect} from "react";
+import React, { useState ,useEffect} from "react";
 import axios from "axios";
-
 
 const Container = styled.div`
   width: ${(props) => props.type !== "sm" && "360px"};
@@ -68,7 +65,7 @@ const Card = ({ type, video }) => {
   }, [video.userId]);
 
   return (
-    <Link to="/video/test" style={{ textDecoration: "none" }}>
+    <Link to={`/video/${video._id}`} style={{ textDecoration: "none" }}>
       <Container type={type}>
         <Image
           type={type}

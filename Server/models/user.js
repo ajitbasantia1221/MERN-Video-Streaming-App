@@ -1,36 +1,40 @@
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
-    name:{
+    name: {
         type: String,
         required: true,
         unique: true,
     },
-    email:{
+    email: {
         type: String,
         required: true,
         unique: true,
     },
-    password:{
+    password: {
         type: String,
     },
-    name:{
+    name: {
         type: String,
         required: true,
         unique: true,
     },
-    img:{
+    img: {
         type: String,
     },
-    subscribers:{
+    subscribers: {
         type: Number,
         default: 0,
     },
-    subscribedUsers:{
+    subscribedUsers: {
         type: [String],
     },
+    fromGoogle: {
+        type: Boolean,
+        default: false,
+    },
 },
-{timestamps:true}
+    { timestamps: true }
 );
 
 
