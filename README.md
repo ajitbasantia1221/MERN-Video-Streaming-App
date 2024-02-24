@@ -35,8 +35,10 @@ To run this project locally, follow these steps:
    ```bash
    git clone https://github.com/your_username/video-streaming-app.git
 2. **Install dependencies**:
+   ```bash
    npm install
 3. **Start the development server**:
+   ```bash
    npm run start
 4. Access the application at http://localhost:3000 in your browser.
 
