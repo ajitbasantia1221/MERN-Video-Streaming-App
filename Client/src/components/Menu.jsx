@@ -24,7 +24,7 @@ const Container = styled.div`
     flex:1;   // 1 tab
     background-color: ${({ theme }) => theme.bgLighter};  //menu left side bg color to black;
     height: 100vh;  //full screen;
-    font-size: 12px;
+    font-size: 14px;
     color: ${({ theme }) => theme.text}; //text color of menu; theme.text select themes based on light or dark mode as a text
     position: sticky; //top most left or right position
     top:0; //top left side from menu
@@ -32,7 +32,7 @@ const Container = styled.div`
 const Item = styled.div`
     display:flex;
     align-items: center;
-    gap: 18px;
+    gap: 20px;
     font-weight: bold;
     cursor: pointer;
     padding: 7.5px 0px;  //padding between all the items of Menu

@@ -17,9 +17,9 @@ const Home = ({type}) => {
     const fetchVideos = async () => {
       const res = await axios.get(`/videos/${type}`);
       setVideos(res.data);
-    }
-    fetchVideos()
-  }, [type])
+    };
+    fetchVideos();
+  }, [type]);
 
   return (
     <Container>

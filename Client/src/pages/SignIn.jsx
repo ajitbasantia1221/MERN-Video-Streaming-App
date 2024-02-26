@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { loginFailure, loginStart, loginSuccess } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
@@ -121,7 +121,7 @@ const SignIn = () => {
         <Input type="password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)} />
-        <Button Sign in onClick={handleLogin}>Sign in</Button>
+        <Button onClick={handleLogin}>Sign in</Button>
         <Title>or</Title>
         <Button onClick={signInWithGoogle}>Signin with Google</Button>
         <Title>or</Title>

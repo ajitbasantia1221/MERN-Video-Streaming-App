@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
-import User from "../models/user.js";
+import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { createError } from "../error.js";
 
 // SignUp Logic ----CREATE/POST method----
-export const signUp = async (req, res, next) => {
+export const signup = async (req, res, next) => {
     try {
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);  //storing the password used in req.body i.e json request
@@ -15,10 +15,10 @@ export const signUp = async (req, res, next) => {
     } catch (err) {
         next(err);
     }
-}
+};
 
 //SignIn Logic -----READ/GET method----
-export const signIn = async (req, res, next) => {
+export const signin = async (req, res, next) => {
     try {
         const user = await User.findOne({ name: req.body.name });
         if (!user) return next(createError(404, "User Not Found!!"));

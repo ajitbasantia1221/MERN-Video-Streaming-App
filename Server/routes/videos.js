@@ -1,4 +1,4 @@
-import { addVideo, addView, getByTag, getVideo, random, search, sub, trend, updateVideo } from "../controllers/video.js";
+import { addVideo, addView, getByTag, getVideo, random, search, sub, trend } from "../controllers/video.js";
 import express from "express";
 import { verifyToken } from "../verifyToken.js";
 
@@ -16,7 +16,7 @@ router.delete('/:id', verifyToken, addVideo);
 //Get a Video:
 router.get('/find/:id', getVideo);
 
-router.get('/view/:id', addView);
+router.put('/view/:id', addView);
 router.get('/trend', trend);
 router.get('/random', random);
 router.get('/sub', verifyToken, sub);

@@ -1,6 +1,6 @@
 import { createError } from "../error.js"
-import User from "../models/user.js"
-import Video from "../models/video.js"
+import User from "../models/User.js"
+import Video from "../models/Video.js"
 
 export const update = async (req, res, next) => {
     if (req.params.id === req.user.id) {  //checking the id's with the req sent in router.put(in users.js) with jwt token verified user id.
