@@ -122,6 +122,7 @@ const Video = () => {
   const dispatch = useDispatch();
   const path = useLocation().pathname.split("/")[2];
   const [channel, setChannel] = useState({});
+  const [viewCountIncremented, setViewCountIncremented] = useState(false); // Track if view count has been incremented
 
   useEffect(() => {
     const fetchData = async () => {
@@ -135,7 +136,20 @@ const Video = () => {
       } catch (err) { }
     };
     fetchData();
-  }, [path, dispatch]);
+
+    // Increment view count when the component mounts and view count has not been incremented yet
+    const incrementViewCount = async () => {
+      try {
+        if (!viewCountIncremented && currentVideo) {
+          await axios.put(`/videos/view/${currentVideo._id}`);
+          setViewCountIncremented(true);
+        }
+      } catch (err) {
+        console.error("Error incrementing view count:", err);
+      }
+    };
+    incrementViewCount();
+  }, [path, dispatch, currentVideo, viewCountIncremented]);
 
   const handleLike = async () => {
     await axios.put(`/users/like/${currentVideo._id}`);
@@ -213,7 +227,7 @@ const Video = () => {
           </>
         )}
       </Content>
-      {/* <Recommendation tags={currentVideo.tags} /> */}
+      <Recommendation tags={currentVideo.tags} />
     </Container>
   );
 };
